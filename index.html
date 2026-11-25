@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pinas Travel Reviews - Philippine Tourist Spots</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="#top">Pinas Travel Reviews</a>
+    <nav>
+      <a href="#spots">Spots</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#chart">Ratings</a>
+      <a href="#tips">Travel Tips</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="top">
+    <h1>Discover the Philippines</h1>
+    <p>Honest reviews, real photos, and the best time to visit the country's top tourist spots.</p>
+    <a class="btn" href="#spots">Explore Spots</a>
+    <div class="stats">
+      <div><b>6</b><span>Top spots</span></div>
+      <div><b>4.6</b><span>Average rating</span></div>
+      <div><b>3</b><span>Categories</span></div>
+    </div>
+  </div>
+
+  <section id="spots">
+    <h2>Tourist Spots</h2>
+    <p class="subtitle">Filter by category or sort by rating.</p>
+
+    <div class="controls" id="spotControls">
+      <button class="active" onclick="filterSpots('All', this)">All</button>
+      <button onclick="filterSpots('Beach', this)">Beach</button>
+      <button onclick="filterSpots('Nature', this)">Nature</button>
+      <button onclick="filterSpots('Heritage', this)">Heritage</button>
+      <button class="sort" onclick="sortSpots()">Sort by Rating ↓</button>
+    </div>
+
+    <div class="cards" id="spotCards">
+
+      <div class="card" data-category="Beach" data-rating="4.8">
+        <div class="photo beach"><span class="emoji">🏝️</span><img src="images/boracay.jpg" alt="Boracay" onerror="this.style.display='none'"></div>
+        <div class="card-body">
+          <span class="badge">Beach</span>
+          <h3>Boracay, Aklan</h3>
+          <p class="stars">★★★★★ <b>4.8</b></p>
+          <p>Famous for its white sand beach and sunsets.</p>
+        </div>
+      </div>
+
+      <div class="card" data-category="Beach" data-rating="4.9">
+        <div class="photo beach"><span class="emoji">⛵</span><img src="images/elnido.jpg" alt="El Nido" onerror="this.style.display='none'"></div>
+        <div class="card-body">
+          <span class="badge">Beach</span>
+          <h3>El Nido, Palawan</h3>
+          <p class="stars">★★★★★ <b>4.9</b></p>
+          <p>Limestone cliffs, hidden lagoons, and island hopping tours.</p>
+        </div>
+      </div>
+
+      <div class="card" data-category="Nature" data-rating="4.6">
+        <div class="photo nature"><span class="emoji">⛰️</span><img src="images/chocolatehills.jpg" alt="Chocolate Hills" onerror="this.style.display='none'"></div>
+        <div class="card-body">
+          <span class="badge">Nature</span>
+          <h3>Chocolate Hills, Bohol</h3>
+          <p class="stars">★★★★☆ <b>4.6</b></p>
+          <p>Over a thousand cone-shaped hills that turn brown in the dry season.</p>
+        </div>
+      </div>
+
+      <div class="card" data-category="Nature" data-rating="4.7">
+        <div class="photo nature"><span class="emoji">🌾</span><img src="images/banaue.jpg" alt="Banaue Rice Terraces" onerror="this.style.display='none'"></div>
+        <div class="card-body">
+          <span class="badge">Nature</span>
+          <h3>Banaue Rice Terraces, Ifugao</h3>
+          <p class="stars">★★★★★ <b>4.7</b></p>
+          <p>Ancient terraces carved into the mountains by hand.</p>
+        </div>
+      </div>
+
+      <div class="card" data-category="Heritage" data-rating="4.5">
+        <div class="photo heritage"><span class="emoji">🏘️</span><img src="images/vigan.jpg" alt="Vigan" onerror="this.style.display='none'"></div>
+        <div class="card-body">
+          <span class="badge">Heritage</span>
+          <h3>Calle Crisologo, Vigan</h3>
+          <p class="stars">★★★★☆ <b>4.5</b></p>
+          <p>A cobblestone street lined with Spanish-era houses.</p>
+        </div>
+      </div>
+
+      <div class="card" data-category="Heritage" data-rating="4.3">
+        <div class="photo heritage"><span class="emoji">🏰</span><img src="images/intramuros.jpg" alt="Intramuros" onerror="this.style.display='none'"></div>
+        <div class="card-body">
+          <span class="badge">Heritage</span>
+          <h3>Intramuros, Manila</h3>
+          <p class="stars">★★★★☆ <b>4.3</b></p>
+          <p>The old walled city with Fort Santiago and historic churches.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="band">
+    <section id="reviews">
+      <h2>Featured Visitor Reviews</h2>
+      <p class="subtitle">What recent travelers said about their trip.</p>
+
+      <div class="reviews">
+
+        <div class="review">
+          <div class="photo beach"><span class="emoji">⛵</span><img src="images/elnido.jpg" alt="Photo by Maria" onerror="this.style.display='none'"></div>
+          <div>
+            <h3>El Nido, Palawan</h3>
+            <p class="stars">★★★★★</p>
+            <p>"The lagoons were unbelievable. Book the island hopping tour early!"</p>
+            <p class="who">Maria S.</p>
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="photo beach"><span class="emoji">🏝️</span><img src="images/boracay.jpg" alt="Photo by Jun" onerror="this.style.display='none'"></div>
+          <div>
+            <h3>Boracay, Aklan</h3>
+            <p class="stars">★★★★☆</p>
+            <p>"Beautiful beach but very crowded on weekends. Go on a weekday."</p>
+            <p class="who">Jun D.</p>
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="photo nature"><span class="emoji">🌾</span><img src="images/banaue.jpg" alt="Photo by Ana" onerror="this.style.display='none'"></div>
+          <div>
+            <h3>Banaue Rice Terraces</h3>
+            <p class="stars">★★★★★</p>
+            <p>"Worth the long ride. The view in the morning is amazing."</p>
+            <p class="who">Ana L.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <p class="subtitle">Click any photo to enlarge it.</p>
+
+    <div class="controls" id="galleryControls">
+      <button class="active" onclick="filterPhotos('All', this)">All</button>
+      <button onclick="filterPhotos('Beach', this)">Beach</button>
+      <button onclick="filterPhotos('Nature', this)">Nature</button>
+      <button onclick="filterPhotos('Heritage', this)">Heritage</button>
+    </div>
+
+    <div class="gallery">
+      <div class="tile photo beach" data-category="Beach" onclick="openLightbox(this)"><span class="emoji">🏝️</span><img src="images/boracay.jpg" alt="Boracay" onerror="this.style.display='none'"><em>Boracay</em></div>
+      <div class="tile photo beach" data-category="Beach" onclick="openLightbox(this)"><span class="emoji">⛵</span><img src="images/elnido.jpg" alt="El Nido" onerror="this.style.display='none'"><em>El Nido</em></div>
+      <div class="tile photo nature" data-category="Nature" onclick="openLightbox(this)"><span class="emoji">⛰️</span><img src="images/chocolatehills.jpg" alt="Chocolate Hills" onerror="this.style.display='none'"><em>Chocolate Hills</em></div>
+      <div class="tile photo nature" data-category="Nature" onclick="openLightbox(this)"><span class="emoji">🌾</span><img src="images/banaue.jpg" alt="Banaue Rice Terraces" onerror="this.style.display='none'"><em>Banaue Rice Terraces</em></div>
+      <div class="tile photo heritage" data-category="Heritage" onclick="openLightbox(this)"><span class="emoji">🏘️</span><img src="images/vigan.jpg" alt="Vigan" onerror="this.style.display='none'"><em>Vigan</em></div>
+      <div class="tile photo heritage" data-category="Heritage" onclick="openLightbox(this)"><span class="emoji">🏰</span><img src="images/intramuros.jpg" alt="Intramuros" onerror="this.style.display='none'"><em>Intramuros</em></div>
+    </div>
+  </section>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <div id="lightboxBox"></div>
+  </div>
+
+  <div class="band">
+    <section id="chart">
+      <h2>Rating Summary</h2>
+      <p class="subtitle">Average rating of each tourist spot.</p>
+      <div class="chart-box"><canvas id="ratingChart"></canvas></div>
+    </section>
+  </div>
+
+  <section id="tips">
+    <h2>Travel Tips</h2>
+    <div class="tips">
+      <div class="tip"><span>🌅</span><p>Go early in the morning to avoid the crowds.</p></div>
+      <div class="tip"><span>💵</span><p>Bring cash. Many small islands have no ATMs.</p></div>
+      <div class="tip"><span>🌧️</span><p>Typhoon season is usually June to November.</p></div>
+      <div class="tip"><span>🌴</span><p>Respect local communities and keep beaches clean.</p></div>
+    </div>
+
+    <h2 class="space">Best Time to Visit</h2>
+    <table>
+      <tr><th>Spot</th><th>Best Months</th></tr>
+      <tr><td>Boracay</td><td>November to May</td></tr>
+      <tr><td>El Nido</td><td>November to May</td></tr>
+      <tr><td>Chocolate Hills</td><td>February to May</td></tr>
+      <tr><td>Banaue Rice Terraces</td><td>March to June</td></tr>
+      <tr><td>Vigan</td><td>November to April</td></tr>
+      <tr><td>Intramuros</td><td>December to February</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Pinas Travel Reviews</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
